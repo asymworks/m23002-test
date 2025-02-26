@@ -6,13 +6,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  Run_FCBot:
+  FCBot:
     runs-on: ubuntu-latest
     steps:
-      - name: Install NodeJS and JQ
-        run: |
-          apt-get update && apt -y install --no-install-recommends nodejs jq
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -27,7 +23,7 @@ jobs:
           project: M23002.FCStd
 
       - name: Create Release
-        uses: akkuman/gitea-release-action@v1
+        uses: softprops/action-gh-release
         with:
           files: |-
             output/**

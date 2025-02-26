@@ -4,28 +4,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  Run_FCBot:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install NodeJS and JQ
-        run: |
-          apt-get update && apt -y install --no-install-recommends nodejs jq
+  FCBot:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+        submodules: true
 
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-          submodules: true
+    - name: Run FCBot
+      uses: asymworks/fcbot@v0
+      with:
+        dir: output
+        config: .fcbot/m23002.yaml
+        project: M23002.FCStd
 
-      - name: Run FCBot
-        uses: asymworks/fcbot@v0
-        with:
-          dir: output
-          config: .fcbot/m23002.yaml
-          project: M23002.FCStd
-
-      - name: Upload Artifacts
-        uses: christopherhx/gitea-upload-artifact@v4
-        with:
-          name: Release
-          path: output
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: Release
+        path: output
