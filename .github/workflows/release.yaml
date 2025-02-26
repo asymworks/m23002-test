@@ -23,7 +23,7 @@ jobs:
           project: M23002.FCStd
 
       - name: Create Release
-        uses: softprops/action-gh-release
+        uses: softprops/action-gh-release@v2
         with:
           files: |-
             output/**
