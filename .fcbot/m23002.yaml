@@ -1,0 +1,35 @@
+# FCBot Configuration for M23002-1
+
+fcbot:
+  version: 1
+
+outputs:
+  - name: M23002-1.step
+    type: step
+    filename: M23002-1.step
+    objects:
+      - M23002-1
+
+  - name: M23002-1.stl
+    type: stl
+    filename: M23002-1.stl
+    objects:
+      - M23002-1
+
+  - name: M23002-2.step
+    type: step
+    filename: M23002-2.step
+    objects:
+      - M23002-2
+
+  - name: M23002-2.stl
+    type: stl
+    filename: M23002-2.stl
+    objects:
+      - M23002-2
+
+  - name: M23002.pdf
+    type: pdf
+    filename: M23002.pdf
+    objects:
+      pages: all

@@ -1,0 +1,33 @@
+name: Generate Release Artifacts
+on:
+  push:
+    tags:
+      - rev_*
+  workflow_dispatch:
+
+jobs:
+  Run_FCBot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install NodeJS and JQ
+        run: |
+          apt-get update && apt -y install --no-install-recommends nodejs jq
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: true
+
+      - name: Run FCBot
+        uses: asymworks/fcbot@v0
+        with:
+          dir: output
+          config: .fcbot/m23002.yaml
+          project: M23002.FCStd
+
+      - name: Create Release
+        uses: akkuman/gitea-release-action@v1
+        with:
+          files: |-
+            output/**
