@@ -1,0 +1,26 @@
+# FCBot Configuration for M23002-1 Documentation Snapshots
+
+fcbot:
+  version: 1
+  output_dir: assets
+
+outputs:
+  - name: M23002-1.png
+    type: screenshot
+    filename: M23002-1.png
+    objects:
+      - M23002-1
+    options:
+      camera: orthographic
+      view: isometric
+      resolution: [ 640, 640 ]
+
+  - name: M23002-2.png
+    type: screenshot
+    filename: M23002-2.png
+    objects:
+      - M23002-2
+    options:
+      camera: orthographic
+      view: isometric
+      resolution: [ 640, 640 ]
