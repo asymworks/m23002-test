@@ -1,6 +1,8 @@
 name: Generate Release Artifacts (Continuous Integration)
 on:
   push:
+    paths:
+      - '**.FCStd'
   workflow_dispatch:
 
 jobs:
