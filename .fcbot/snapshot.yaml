@@ -5,6 +5,17 @@ fcbot:
   output_dir: assets
 
 outputs:
+  - name: M23002-ASSY.png
+    type: screenshot
+    filename: M23002-ASSY.png
+    objects:
+      - M23002-1-ASSY
+      - M23002-2-ASSY
+    options:
+      camera: orthographic
+      view: isometric
+      resolution: [ 640, 640 ]
+
   - name: M23002-1.png
     type: screenshot
     filename: M23002-1.png

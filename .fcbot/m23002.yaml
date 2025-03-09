@@ -16,6 +16,12 @@ outputs:
     objects:
       - M23002-1
 
+  - name: M23002-1.glb
+    type: glb
+    filename: M23002-1.glb
+    objects:
+      - M23002-1
+
   - name: M23002-2.step
     type: step
     filename: M23002-2.step
@@ -27,6 +33,19 @@ outputs:
     filename: M23002-2.stl
     objects:
       - M23002-2
+
+  - name: M23002-2.glb
+    type: glb
+    filename: M23002-2.glb
+    objects:
+      - M23002-2
+
+  - name: M23002-ASSY.glb
+    type: glb
+    filename: M23002-ASSY.glb
+    objects:
+      - M23002-1-ASSY
+      - M23002-2-ASSY
 
   - name: M23002.pdf
     type: pdf
